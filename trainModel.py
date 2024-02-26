@@ -23,7 +23,7 @@ def criar_modelo_lda(corpus, dictionary, num_topics=2, passes=15):
     return ldamodel
 
 
-def analisar_topicos_e_relevancia(ldamodel, documentos, termo_pesquisa):
+def analisar_topicos_e_relevancia(ldamodel, termo_pesquisa):
     topicos_relevantes = encontrar_topicos_relevantes(ldamodel, termo_pesquisa)
     topicos_formatados = [(topic_id, [(word, round(weight, 4)) for word, weight in topic]) for topic_id, topic in
                           topicos_relevantes]
@@ -74,14 +74,6 @@ corpus_path = 'C:\\Users\\jader\\Desktop\\estudos\\model\\corpus.mm'
 
 ldamodel = criar_modelo_lda(corpus, dictionary, num_topics=2, passes=15)
 # Ajuste a chamada da função conforme a nova definição
-
-topicos_relevantes, topicos_relevantes_formatados = analisar_topicos_e_relevancia(ldamodel, documentos, termo_pesquisa)
-
-#for idx, topic in ldamodel.print_topics(-1):
-#    print(f"Tópico: {idx}\nPalavras: {topic}\n")
-
-# Agora, mesmo que 'analisar_topicos_e_relevancia' retorne listas vazias, o código não resultará em erro
-print(topicos_relevantes, topicos_relevantes_formatados)
 
 # Depois do treinamento, chame modelSave para salvar o modelo, dicionário e corpus
 modelSave(ldamodel, dictionary, corpus, model_path, dictionary_path, corpus_path)
