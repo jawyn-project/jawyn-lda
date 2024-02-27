@@ -1,7 +1,6 @@
 from createdata import crialista
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.decomposition import LatentDirichletAllocation
-from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
 
@@ -38,7 +37,7 @@ print(topic_words)
 document_topics = lda.transform(X)
 
 # Processamento da consulta de pesquisa
-query = "ciencia"  # Substitua por sua consulta específica
+query = "ciencia"
 query_vector = vectorizer.transform([query])
 
 # Utilização do LDA para obter a distribuição de tópicos para a consulta

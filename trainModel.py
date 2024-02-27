@@ -56,8 +56,8 @@ model_path = 'model'
 
 # Definindo os documentos
 documentos = [
-    "pesquisar google interessante descobrir conhecimento cinemas",
-    "tecnologia inovação notícias avanços online cinemas",
+    "pesquisar google interessante descobrir conhecimento clarificar desvendar descobrir decifrar desenterrar desvelar desvendar decifrar discernir deslindar perscrutar esquadrinhar pesquisar esmiuçar escrutinar deslindar discernir entender investigar examinar explorar averiguar estudar aprender indagar",
+    "tecnologia inovação notícias avanços online ",
     "leitura livros aventura filmes cinemas entretenimento"
 ]
 dictionary, corpus = preprocessar_documentos(documentos)
